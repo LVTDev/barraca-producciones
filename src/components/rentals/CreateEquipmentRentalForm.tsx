@@ -1,5 +1,5 @@
 "use client";
-import React, { FormEventHandler, useState } from "react";
+import React, {  useState } from "react";
 import Button1 from "../generalUI/Button1";
 
 const CreateEquipmentRentalForm = () => {

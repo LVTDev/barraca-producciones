@@ -2,9 +2,8 @@ import React from 'react'
 import { useCart } from '../contexts/CartContext'
 
 
-type Props = {}
 
-const CartDropdown = (props: Props) => {
+const CartDropdown = () => {
     const {cart} = useCart()
    return (
     <div className="absolute right-0 top-10 bg-white shadow-lg p-4 rounded w-64 z-50 text-black">

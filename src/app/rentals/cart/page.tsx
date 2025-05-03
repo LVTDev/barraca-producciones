@@ -2,7 +2,7 @@
 import { useCart } from "@/components/contexts/CartContext";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   const { cart } = useCart();
 
   return (
@@ -22,4 +22,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-let isConnected = false; // Track connection status
+const isConnected = false; // Track connection status
 const connectionToDB = async () =>{
     if (isConnected) {
         return;
