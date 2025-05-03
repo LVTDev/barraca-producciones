@@ -1,6 +1,7 @@
+"use client";
 import AddToCart from "@/components/generalUI/AddToCart";
 import Button1 from "@/components/generalUI/Button1";
-import React from "react";
+import React, { useEffect, useState } from "react";
 export type RentalItem = {
   _id: string;
   itemName: string;
@@ -12,11 +13,20 @@ export type RentalItem = {
 type RentalResponse = {
   allItems: RentalItem[];
 };
-const Page = async () => {
-  const fetchedRentalItems = await fetch(
-    `${process.env.DEV_URL || ""}/api/rentals`
+const Page = () => {
+  useEffect(() => {
+    fetchAllItems();
+  }, []);
+  const [allRentalItems, setAllRentalItems] = useState<RentalResponse | null>(
+    null
   );
-  const allRentalItems: RentalResponse = await fetchedRentalItems.json();
+  const fetchAllItems = async () => {
+    const fetchedRentalItems = await fetch(
+      `${process.env.DEV_URL || ""}/api/rentals`
+    );
+    const allRentalItemsRes: RentalResponse = await fetchedRentalItems.json();
+    setAllRentalItems(allRentalItemsRes);
+  };
   return (
     <div>
       <h2 className="text-2xl mb-3">Catalogo</h2>
