@@ -22,7 +22,7 @@ const Page = () => {
   );
   const fetchAllItems = async () => {
     const fetchedRentalItems = await fetch(
-      `${process.env.DEV_URL || ""}/api/rentals`
+      `/api/rentals`
     );
     const allRentalItemsRes: RentalResponse = await fetchedRentalItems.json();
     setAllRentalItems(allRentalItemsRes);
