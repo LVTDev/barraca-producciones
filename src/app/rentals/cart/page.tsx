@@ -13,7 +13,7 @@ const Page = () => {
       ) : (
         cart.map((item, index) => (
           <div key={index} className="py-2">
-            <p>{item.itemName}</p>
+            <p>{item.rentalItem}</p>
             <p>Pesos {item.price} MXN</p>
           </div>
         ))
