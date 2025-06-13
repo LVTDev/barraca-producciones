@@ -6,7 +6,8 @@ import FloatingMenu from "@/components/generalUI/FloatingMenu";
 
 const zillaSlab = Zilla_Slab({
   variable: "--font-zilla",
-  weight: ["300", "400", "500", "600", "700"]
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"]
 });
 
 

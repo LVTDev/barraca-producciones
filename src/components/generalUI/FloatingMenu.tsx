@@ -3,11 +3,10 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 
 const FloatingMenu = () => {
   const menuRef = useRef<HTMLDivElement>(null);
-  const [lastScrollY, setLastScrollY] = useState(0);
   gsap.registerPlugin(ScrollTrigger, useGSAP);
 
   useGSAP(() => {
