@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {  Zilla_Slab } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/generalUI/Header";
+import FloatingMenu from "@/components/generalUI/FloatingMenu";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const zillaSlab = Zilla_Slab({
+  variable: "--font-zilla",
+  weight: ["300", "400", "500", "600", "700"]
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
 
 export const metadata: Metadata = {
   title: "Barraca Producciones",
@@ -25,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${zillaSlab.variable} antialiased relative`}
       >
+        <Header />
+        <FloatingMenu />
         {children}
       </body>
     </html>

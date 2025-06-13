@@ -1,18 +1,21 @@
 "use client";
 import AddToCart from "@/components/generalUI/AddToCart";
-import Button1 from "@/components/generalUI/Button1";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import { groq } from "next-sanity";
 import React, { useEffect, useState } from "react";
 export type RentalItem = {
   _id: string;
-  itemName: string;
+  rentalItem: string;
   imageLinks: string[];
   price: number;
   availability: boolean;
   categories: string[];
+  mainImage:{
+    asset:{_ref: string}
+  }
 };
-type RentalResponse = {
-  allItems: RentalItem[];
-};
+type RentalResponse =  RentalItem[];
 const Page = () => {
   useEffect(() => {
     fetchAllItems();
@@ -21,20 +24,26 @@ const Page = () => {
     null
   );
   const fetchAllItems = async () => {
-    const fetchedRentalItems = await fetch(
-      `/api/rentals`
-    );
-    const allRentalItemsRes: RentalResponse = await fetchedRentalItems.json();
+    const query = groq`
+  *[_type == "rentalItem"]{ ... }
+    `;
+    // const fetchedRentalItems = await fetch(
+    //   `/api/rentals`
+    // );
+    const allRentalItemsRes: RentalResponse = await client.fetch(query);
     setAllRentalItems(allRentalItemsRes);
+
   };
+  console.log(allRentalItems)
   return (
     <div>
       <h2 className="text-2xl mb-3">Catalogo</h2>
       <div>
-        {allRentalItems?.allItems?.map((item: RentalItem) => (
+        {allRentalItems?.map((item: RentalItem) => (
           <div className="mb-4  border-b-2" key={item._id}>
-            <p>Articulo: {item.itemName}</p>
+            <p>Articulo: {item.rentalItem}</p>
             <p>Precio: {item.price} pesos al dia</p>
+            <img src={`${urlFor(item.mainImage.asset._ref)}`} alt="" />
             <div className="flex">
               <p>Disponibilidad:</p>
               {item.availability === true ? (
@@ -48,7 +57,7 @@ const Page = () => {
         ))}
       </div>
 
-      <Button1 type="link" link="/rentals/admin" text="Admin" />
+      {/* <Button1 type="link" link="/rentals/admin" text="Admin" /> */}
     </div>
   );
 };
