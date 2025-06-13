@@ -58,7 +58,7 @@ const FloatingMenu = () => {
           <Link href="/nosotros">Nosotros</Link>
         </li>
         <li>
-          <Link href="/renta">Renta</Link>
+          <Link href="/rentals">Renta</Link>
         </li>
         <li>
           <Link href="/blog">Blog</Link>
