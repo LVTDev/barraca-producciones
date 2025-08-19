@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import {  Zilla_Slab } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Header from "@/components/generalUI/Header";
 import FloatingMenu from "@/components/generalUI/FloatingMenu";
 
