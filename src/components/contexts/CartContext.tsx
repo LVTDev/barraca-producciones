@@ -1,5 +1,6 @@
 "use client";
-import { RentalItem } from "@/app/rentals/page";
+import { RentalItem } from "@/app/(ES)/rentals/page";
+// import { RentalItem } from "@/app/rentals/page";
 import { createContext, useContext, useState } from "react";
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
