@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import {  Zilla_Slab } from "next/font/google";
-import "../globals.css";
+import {  Zilla_Slab, Poppins } from "next/font/google";
+import "./globals.css";
 import Header from "@/components/generalUI/Header";
 import FloatingMenu from "@/components/generalUI/FloatingMenu";
 
 const zillaSlab = Zilla_Slab({
   variable: "--font-zilla",
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"]
+});
+const poppins = Poppins({
+  variable: "--font-poppins",
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"]
 });
@@ -25,10 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${zillaSlab.variable} antialiased relative`}
+        className={`${poppins.variable} ${zillaSlab.variable} antialiased relative`}
       >
         <Header />
-        <FloatingMenu />
+        {/* <FloatingMenu /> */}
         {children}
       </body>
     </html>
