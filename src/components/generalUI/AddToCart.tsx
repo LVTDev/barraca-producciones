@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useCart } from "../contexts/CartContext";
-import { RentalItem } from "@/app/rentals/page";
+import { RentalItem } from "@/app/(ES)/rentals/page";
 
 const AddToCart = ({ product }: { product: RentalItem }) => {
   const { addToCart } = useCart();
