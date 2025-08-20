@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Globe } from "react-feather";
+// import { Globe } from "react-feather";
 
 const Header = () => {
   return (

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import {  Zilla_Slab, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/generalUI/Header";
-import FloatingMenu from "@/components/generalUI/FloatingMenu";
+// import FloatingMenu from "@/components/generalUI/FloatingMenu";
 
 const zillaSlab = Zilla_Slab({
   variable: "--font-zilla",

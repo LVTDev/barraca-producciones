@@ -61,7 +61,7 @@ export default function ContactForm() {
       setFeedback("✅ Your message has been sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      setFeedback("❌ Something went wrong. Please try again.");
+      setFeedback(`❌ Something went wrong. Please try again. ${error}`);
     } finally {
       setLoading(false);
     }

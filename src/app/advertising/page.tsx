@@ -1,5 +1,4 @@
 import ContactForm from "@/components/generalUI/ContactForm";
-import Link from "next/link";
 import React from "react";
 
 const Page = () => {
